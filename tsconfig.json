@@ -13,6 +13,9 @@
       "@pages/*":[ 
         "src/app/components/pages/*"
         ],
+       /*  "@assets/*":[ 
+          "src/assets/assets/*"
+          ], */
       "@enviroment/*":[ 
           "src/enviroments/*"
           ],
