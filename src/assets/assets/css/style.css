@@ -2192,7 +2192,7 @@ progress {
 .form-control:focus {
   color: #212529;
   background-color: #fff;
-  border-color: #9eb1f1;
+  border-color: #ffbd17;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(60, 99, 226, 0.25);
 }
@@ -10841,7 +10841,7 @@ fieldset:disabled .btn {
 }
 
 .modal-backdrop.show {
-  opacity: 0.5;
+  opacity: 0.71;
   /* opacity: 0.15; */
 }
 
@@ -11182,8 +11182,8 @@ main.bg-3 {
 
 .bg-theme,
 .modal-backdrop {
-  background: var(--bs-dark) !important;
-  color: var(--bs-dark) !important;
+  background: var(--bs-white) !important;
+  color: var(--bs-white) !important;
 }
 
 .border-dashed {
@@ -11675,7 +11675,7 @@ linearGradient stop:last-child {
   bottom: 0;
   width: 100%;
   border-radius: 2px;
-  background-color: var(--finwallapp-green);
+  background-color: var(--bs-warning);
 }
 
 .form-floating.is-invalid:before {
@@ -12324,7 +12324,7 @@ linearGradient stop:last-child {
   width: 100%;
   top: 0;
   left: 0;
-  background: var(--bs-dark);
+  background: var(--bs-white);
   /* background: var(--finwallapp-theme-color); */
   opacity: 0;
 }
