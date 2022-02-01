@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { ScriptService } from './services/script.service';
-
+//declare var $: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

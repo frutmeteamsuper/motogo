@@ -1,4 +1,4 @@
-
+(function($){
 'use strict';
 $(document).ready(function () {
 
@@ -152,3 +152,4 @@ $(window).on('resize', function () {
     /* main container min height */
     $('main').css('min-height', $(window).height())
 });
+})(jQuery);
