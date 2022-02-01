@@ -5741,7 +5741,7 @@ fieldset:disabled .btn {
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 500px;
-    margin: 1.75rem auto;
+    margin: 1rem auto;
   }
   .modal-dialog-scrollable {
     height: calc(100% - 3.5rem);
@@ -10841,7 +10841,7 @@ fieldset:disabled .btn {
 }
 
 .modal-backdrop.show {
-  opacity: 0.71;
+  opacity: 0.49;
   /* opacity: 0.15; */
 }
 
@@ -11182,8 +11182,8 @@ main.bg-3 {
 
 .bg-theme,
 .modal-backdrop {
-  background: var(--bs-white) !important;
-  color: var(--bs-white) !important;
+  background: var(--bs-dark) !important;
+  color: var(--bs-dark) !important;
 }
 
 .border-dashed {
