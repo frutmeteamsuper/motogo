@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit } from '@angular/core';
 import { ScriptService } from '@app/services/script.service';
 import { ScriptStore } from '@app/services/script.store';
 import { SwiperOptions } from 'swiper';
@@ -8,7 +8,7 @@ declare var $: any;
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent  {
+export class HomeComponent implements AfterViewInit {
 
   constructor(
     public script:ScriptService ,
@@ -27,8 +27,8 @@ export class HomeComponent  {
     navigation: false
   };  
 
-  ngOnInit(): void {
-  /*   this.script.load(
+  ngAfterViewInit(): void {
+     this.script.load(
     'jquery',
     'popper',
     'bootstrap-5',
@@ -40,5 +40,5 @@ export class HomeComponent  {
     'swiper',
     'app')
     .then(data => {console.log('script loaded ', data);}).catch(error => console.log(error));
- */  }
+   }
 }
