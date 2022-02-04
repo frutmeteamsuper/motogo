@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ScriptService } from '@app/services/script.service';
 import { ScriptStore } from '@app/services/script.store';
+import { SwiperOptions } from 'swiper';
 declare var $: any;
 @Component({
   selector: 'app-home',
@@ -12,6 +13,19 @@ export class HomeComponent  {
   constructor(
     public script:ScriptService ,
   ) { } 
+
+  config: SwiperOptions = {
+
+    a11y: { enabled: true },
+    direction: 'horizontal',
+    slidesPerView: 4,
+    keyboard: true,
+    mousewheel: false,
+    scrollbar: false,
+    pagination: false,
+    spaceBetween: 30,
+    navigation: false
+  };  
 
   ngOnInit(): void {
   /*   this.script.load(

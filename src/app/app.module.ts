@@ -10,7 +10,7 @@ import { LeftSidebarModule } from '@shared/components/left-sidebar/left-sidebar.
 import { FilterModule } from '@shared/components/filter/filter.module';
 import { NotificationsModule } from './components/pages/notifications/notifications.module';
 import { RouterModule } from '@angular/router';
-
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 @NgModule({
   declarations: [
     AppComponent
@@ -22,6 +22,7 @@ import { RouterModule } from '@angular/router';
     HeaderModule,
     LeftSidebarModule,
     FilterModule,
+    NgxUsefulSwiperModule,
     NotificationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
