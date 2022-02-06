@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 // SERVICES
 import { Butler } from './services/butler.service';
+import { HomeSelectorModule } from './shared/components/home-selector/home-selector.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -24,6 +25,7 @@ import { Butler } from './services/butler.service';
     HeaderModule,
     LeftSidebarModule,
     FilterModule,
+    HomeSelectorModule,
     NgxUsefulSwiperModule,
     NotificationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

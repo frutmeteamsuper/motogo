@@ -15,5 +15,5 @@ export class LeftSidebarComponent implements OnInit {
   ngOnInit(): void {
     if (!this._butler.biker) {console.log("dato:"+this._butler.biker);}
   }
-
+ 
 }

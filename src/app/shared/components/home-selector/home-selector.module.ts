@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header.component';
+import { HomeSelectorComponent } from './home-selector.component';
 import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HomeSelectorComponent
   ],
   imports: [
     CommonModule,
-    RouterModule    
+    RouterModule  
   ],
-  exports: [HeaderComponent],
+  exports: [HomeSelectorComponent],
 })
-export class HeaderModule { }
+export class HomeSelectorModule { }

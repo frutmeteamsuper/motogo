@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Butler } from '@app/services/butler.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public _butler:Butler,
+    public router:Router
+  ) { }
 
   ngOnInit(): void {
   }

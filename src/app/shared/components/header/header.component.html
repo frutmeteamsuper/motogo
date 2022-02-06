@@ -1,7 +1,7 @@
 <header class="header position-fixed">
     <div class="row">
-        <div class="col-auto">
-            <a href="javascript:void(0)" target="_self" class="btn btn-light btn-44 menu-btn">
+        <div class="col-auto" >
+            <a href="javascript:void(0)" target="_self" class="btn btn-light btn-44 menu-btn"  [hidden]="router.url.includes('/login')">
                 <i class="bi bi-list"></i>
             </a>
         </div>
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="col-auto">
-            <a [routerLink]="['notifications']"  class="btn btn-light btn-44">
+            <a [routerLink]="['notifications']"  class="btn btn-light btn-44"  [hidden]="router.url.includes('/login')">
                 <i class="bi bi-bell"></i>
                 <span class="count-indicator"></span>
             </a>

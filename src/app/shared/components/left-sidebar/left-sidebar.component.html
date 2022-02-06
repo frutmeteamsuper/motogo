@@ -1,7 +1,7 @@
-<div class="sidebar-wrap  sidebar-overlay" style="background-color: #212529bd;">
+<div class="sidebar-wrap  sidebar-overlay" style="background-color: #212529bd;" >
     <!-- Add pushcontent or fullmenu instead overlay -->
     <div class="closemenu text-muted">Close Menu</div>
-    <div class="sidebar " >
+    <div class="sidebar " [ngStyle]="{'background-color': _butler.biker ? '#212529bd' : '#ffbd17'}" >
         <!-- user information -->
         <div class="row my-3">
             <div class="col-12 profile-sidebar">
@@ -30,10 +30,7 @@
                     </div>
                     <div class="col px-0 align-self-center">
                         <h5 class="mb-2">Luis el Brother</h5>
-                        <div class="form-check form-switch">
-							<input class="form-check-input" type="checkbox" id="darkmodeswitch">
-							<label class="form-check-label text-muted px-2 " for="darkmodeswitch">Pasajero</label>
-						</div>
+                        <app-home-selector></app-home-selector>
                         <p class="text-muted size-12">Mérida,<br />Venezuela</p>
                     </div>
                   
@@ -45,91 +42,22 @@
         <div class="row">
             <div class="col-12">
                 <ul class="nav nav-pills">
-                    <li class="nav-item menu-btn">
+                    <li class="nav-item menu-btn" [hidden]="_butler.biker">
                         <a  [routerLink]="['home']" class="nav-link active " aria-current="page"  >
                             <div class="avatar avatar-40 icon"><i class="bi bi-house-door"></i></div>
                             <div class="col">Passenger Home</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
+                    </li> 
+                    <li class="nav-item menu-btn" [hidden]="!_butler.biker">
+                        <a  [routerLink]="['home']" class="nav-link active " aria-current="page"  >
+                            <div class="avatar avatar-40 icon"><i class="bi bi-house-door"></i></div>
+                            <div class="col">Biker Home</div>
+                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
+                        </a>
                     </li>
                     
                     
-  
-                   <!--  <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button"
-                            aria-expanded="false">
-                            <div class="avatar avatar-40 icon"><i class="bi bi-cart"></i></div>
-                            <div class="col">Shop</div>
-                            <div class="arrow"><i class="bi bi-chevron-down plus"></i> <i
-                                    class="bi bi-chevron-up minus"></i>
-                            </div>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item nav-link" >
-                                    <div class="avatar avatar-40  icon"><i class="bi bi-shop"></i></div>
-                                    <div class="col align-self-center">Shop home</div>
-                                    <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                                </a>
-                            </li>
-  
-                            <li>
-                                <a class="dropdown-item nav-link" >
-                                    <div class="avatar avatar-40 icon"><i class="bi bi-box-seam"></i>
-                                    </div>
-                                    <div class="col align-self-center">All Products</div>
-                                    <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item nav-link" >
-                                    <div class="avatar avatar-40 icon"><i class="bi bi-box-seam"></i>
-                                    </div>
-                                    <div class="col align-self-center">Product</div>
-                                    <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item nav-link" >
-                                    <div class="avatar avatar-40 icon"><i class="bi bi-bag"></i>
-                                    </div>
-                                    <div class="col align-self-center">Cart</div>
-                                    <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item nav-link" >
-                                    <div class="avatar avatar-40 icon"><i class="bi bi-view-list"></i>
-                                    </div>
-                                    <div class="col align-self-center">My Orders</div>
-                                    <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item nav-link" >
-                                    <div class="avatar avatar-40 icon"><i class="bi bi-cash-stack"></i>
-                                    </div>
-                                    <div class="col align-self-center">Payment</div>
-                                    <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item nav-link" >
-                                    <div class="avatar avatar-40 icon"><i class="bi bi-receipt"></i>
-                                    </div>
-                                    <div class="col align-self-center">Invoice</div>
-                                    <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li> -->
-                <!--     <li class="nav-item">
-                        <a class="nav-link"  tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="bi bi-chat-text"></i></div>
-                            <div class="col">Messages</div>
-                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                        </a>
-                    </li> -->
   
                     <li class="nav-item menu-btn">
                         <a class="nav-link" [routerLink]="['notifications']" tabindex="-1">
@@ -139,18 +67,10 @@
                         </a>
                     </li>
   
-                    <!-- <li class="nav-item">
-                        <a class="nav-link"  tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="bi bi-newspaper"></i></div>
-                            <div class="col">Blogs</div>
-                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                        </a>
-                    </li> -->
-  
               
                  
                            <li class="nav-item menu-btn">
-                        <a  [routerLink]="['login']" class="nav-link active " aria-current="page"  >
+                        <a  [routerLink]="['login']" class="nav-link  " aria-current="page"  >
                             <div class="avatar avatar-40 icon"><i class="bi bi-box-arrow-right"></i></div>
                             <div class="col">Logout</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -160,4 +80,5 @@
             </div>
         </div>
     </div>
+   
   </div>
