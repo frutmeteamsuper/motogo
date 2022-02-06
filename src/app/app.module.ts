@@ -11,6 +11,8 @@ import { FilterModule } from '@shared/components/filter/filter.module';
 import { NotificationsModule } from './components/pages/notifications/notifications.module';
 import { RouterModule } from '@angular/router';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+// SERVICES
+import { Butler } from './services/butler.service';
 @NgModule({
   declarations: [
     AppComponent
@@ -31,7 +33,9 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [
+    Butler
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
