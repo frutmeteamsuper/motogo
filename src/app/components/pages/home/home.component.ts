@@ -2,6 +2,7 @@ import { Component, OnInit,AfterViewInit } from '@angular/core';
 import { ScriptService } from '@app/services/script.service';
 import { ScriptStore } from '@app/services/script.store';
 import { SwiperOptions } from 'swiper';
+import {Butler} from '@app/services/butler.service';
 declare var $: any;
 @Component({
   selector: 'app-home',
@@ -11,19 +12,20 @@ declare var $: any;
 export class HomeComponent implements AfterViewInit {
 
   constructor(
-    public script:ScriptService ,
+    public script:ScriptService,
+    public _butler: Butler
   ) { } 
 
   config: SwiperOptions = {
 
     a11y: { enabled: true },
     direction: 'horizontal',
-    slidesPerView: 4,
+    slidesPerView: 5,
     keyboard: true,
     mousewheel: false,
     scrollbar: false,
     pagination: false,
-    spaceBetween: 30,
+    spaceBetween: 5,
     navigation: false
   };  
 

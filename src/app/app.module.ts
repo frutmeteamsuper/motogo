@@ -14,6 +14,7 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 // SERVICES
 import { Butler } from './services/butler.service';
 import { HomeSelectorModule } from './shared/components/home-selector/home-selector.module';
+import { FooterModule } from './shared/components/footer/footer.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -28,6 +29,7 @@ import { HomeSelectorModule } from './shared/components/home-selector/home-selec
     HomeSelectorModule,
     NgxUsefulSwiperModule,
     NotificationsModule,
+    FooterModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

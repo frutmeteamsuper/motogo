@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Butler } from './services/butler.service';
 import { ScriptService } from './services/script.service';
 //declare var $: any;
 @Component({
@@ -9,7 +10,8 @@ import { ScriptService } from './services/script.service';
 export class AppComponent implements OnInit {
   title = 'motogo';
   constructor(
-    public script:ScriptService
+    public script:ScriptService,
+    public _butler:Butler
   ){}
   ngOnInit(): void {
     this.script.load(
