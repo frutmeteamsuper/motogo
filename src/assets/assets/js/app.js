@@ -420,7 +420,7 @@ $(window).on('load', function () {
 
                 }
             });
-            progressCircles1.animate(0.65);  // Number from 0.0 to 1.0
+            progressCircles1.animate(0.99);  // Number from 0.0 to 1.0
 
 
             /* Progress circle */

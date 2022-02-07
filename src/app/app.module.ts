@@ -15,7 +15,8 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { Butler } from './services/butler.service';
 import { HomeSelectorModule } from './shared/components/home-selector/home-selector.module';
 import { FooterModule } from './shared/components/footer/footer.module';
-@NgModule({
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+@NgModule({ 
   declarations: [
     AppComponent
   ],
@@ -29,7 +30,8 @@ import { FooterModule } from './shared/components/footer/footer.module';
     HomeSelectorModule,
     NgxUsefulSwiperModule,
     NotificationsModule,
-    FooterModule,
+    FooterModule, 
+    FontAwesomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

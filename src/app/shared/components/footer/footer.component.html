@@ -2,10 +2,10 @@
     <div class="container">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link " (click)="setProfile()"  [ngStyle]="{'color': !_butler.profile ? '#999999' : '#ffbd17'}" >
                     <span>
-                        <i class="nav-icon bi bi-house"></i>
-                        <span class="nav-text">Home</span>
+                        <i class="nav-icon bi bi-person-circle" style="font-size:20px;" ></i>
+                  
                     </span>
                 </a>
             </li>
@@ -20,10 +20,11 @@
             </li>
       
             <li class="nav-item">
-                <a class="nav-link active" href="wallet.html">
+                <a class="nav-link " (click)="setRides()">
                     <span>
-                        <i class="nav-icon bi bi-wallet2"></i>
-                        <span class="nav-text">Wallet</span>
+                        <fa-icon [icon]="faMotorcycle"  style="font-size:20px;" [ngStyle]="{'color':   _butler.profile ? '#999999' : '#ffbd17'}"></fa-icon>
+                        <!-- <i class="nav-icon fas fa-motorcycle" style="font-size:20px;"></i> -->
+                        <!-- <span class="nav-text">Wallet</span> -->
                     </span>
                 </a>
             </li>

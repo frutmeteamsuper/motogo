@@ -7,9 +7,11 @@ export class Butler {
     vector:any={};       
     string:string=""; 
     biker:boolean=true;
+    profile:boolean=true;
+    rides:boolean=false;
     bikerStatus:boolean=true;
     type:string="Passenger"; 
-	any:any[]=[]; 
+	  any:any[]=[]; 
     number:number=0;
     constructor() { }
 }
