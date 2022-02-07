@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Butler } from '@app/services/butler.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public _butler:Butler
+  ) { }
+
+public statusChange(){
+  if(this._butler.bikerStatus){
+    this._butler.bikerStatus=false;
+    return
+  }  
+  if(!this._butler.bikerStatus){
+    this._butler.bikerStatus=true;
+
+  }
+}
 
   ngOnInit(): void {
   }
