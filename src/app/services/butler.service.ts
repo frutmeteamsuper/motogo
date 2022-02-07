@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class Butler {
     vector:any={};       
     string:string=""; 
-    biker:boolean=true;
+    biker:boolean=false;
     profile:boolean=true;
     rides:boolean=false;
     bikerStatus:boolean=true;
