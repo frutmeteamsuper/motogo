@@ -7,6 +7,7 @@ export class Butler {
     vector:any={};       
     string:string=""; 
     biker:boolean=false;
+    details:boolean=false;
     profile:boolean=true;
     rides:boolean=false;
     bikerStatus:boolean=true;
