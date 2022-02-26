@@ -16,6 +16,7 @@ import { Butler } from './services/butler.service';
 import { HomeSelectorModule } from './shared/components/home-selector/home-selector.module';
 import { FooterModule } from './shared/components/footer/footer.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({ 
   declarations: [
     AppComponent

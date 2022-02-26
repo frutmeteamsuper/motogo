@@ -1,8 +1,11 @@
-import { Component, OnInit,AfterViewInit } from '@angular/core';
+import { Component,   AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { ScriptService } from '@app/services/script.service';
 import { ScriptStore } from '@app/services/script.store';
 import { SwiperOptions } from 'swiper';
 import {Butler} from '@app/services/butler.service';
+import { BikersService } from '@app/services';
+import {Map} from 'mapbox-gl';
+
 
 declare var $: any;
 @Component({
@@ -11,8 +14,12 @@ declare var $: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements AfterViewInit {
+
+@ViewChild('mapDiv')mapDivElement!:ElementRef
+
 link:string="";
   constructor(
+    private bikerService:BikersService,
     public script:ScriptService,
     public _butler: Butler
   ) { } 
@@ -47,6 +54,15 @@ if(!this._butler.details){
 }
 
   ngAfterViewInit(): void {
+
+    const map = new Map({
+      container: this.mapDivElement.nativeElement  , // container ID
+      style: 'mapbox://styles/mapbox/streets-v11', // style URL
+      center: this.bikerService.userLocation,
+      zoom: 9 // starting zoom
+      });
+
+    console.log(this.bikerService.userLocation);
      this.script.load(
     'jquery',
     'popper',
