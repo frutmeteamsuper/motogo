@@ -58,7 +58,7 @@ if(!this._butler.details){
     const map = new Map({
       container: this.mapDivElement.nativeElement  , // container ID
       style: 'mapbox://styles/mapbox/streets-v11', // style URL
-      center: this.bikerService.userLocation,
+      center: [-71.1607,  8.5847],
       zoom: 9 // starting zoom
       });
 
