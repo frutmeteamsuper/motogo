@@ -16,10 +16,12 @@ import { Butler } from './services/butler.service';
 import { HomeSelectorModule } from './shared/components/home-selector/home-selector.module';
 import { FooterModule } from './shared/components/footer/footer.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MapviewComponent } from './components/mapview/mapview.component';
 
 @NgModule({ 
   declarations: [
-    AppComponent
+    AppComponent,
+    MapviewComponent
   ],
   imports: [
     RouterModule,

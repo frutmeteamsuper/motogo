@@ -59,7 +59,7 @@ if(!this._butler.details){
       container: this.mapDivElement.nativeElement  , // container ID
       style: 'mapbox://styles/mapbox/streets-v11', // style URL
       center: [-71.1607,  8.5847],
-      zoom: 9 // starting zoom
+      zoom: 16 // starting zoom
       });
 
     console.log(this.bikerService.userLocation);
