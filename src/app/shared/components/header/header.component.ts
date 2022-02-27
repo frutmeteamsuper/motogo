@@ -47,19 +47,7 @@ export class HeaderComponent implements AfterViewInit {
   
   }
   ngAfterViewInit(): void {
-    this.script.load(
-      'jquery',
-      'popper',
-      'bootstrap-5',
-      'main',
-      'color-scheme',
-      'pwa-services',
-      'chart-js',
-      'progressbar',
-      'swiper',
-      'app')
-      .then(data => {console.log('script loaded ', data);}).catch(error => console.log(error));
-     }
+      }
   
 
 }

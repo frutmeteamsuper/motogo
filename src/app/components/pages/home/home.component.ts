@@ -1,9 +1,9 @@
-import { Component,   AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { ScriptService } from '@app/services/script.service';
 import { ScriptStore } from '@app/services/script.store';
 import { SwiperOptions } from 'swiper';
 import {Butler} from '@app/services/butler.service';
-import { BikersService } from '@app/services';
+import { BikersService } from '@app/services/';
 import {Map} from 'mapbox-gl';
 
 
@@ -19,7 +19,7 @@ export class HomeComponent implements AfterViewInit {
 
 link:string="";
   constructor(
-    private bikerService:BikersService,
+    private bikersService:BikersService,
     public script:ScriptService,
     public _butler: Butler
   ) { } 
@@ -36,6 +36,8 @@ link:string="";
     spaceBetween: 5,
     navigation: false
   };  
+  
+
 public details(b:any){
   let a =b;
   if (a==1){this.link="assets/assets/img/user4.jpg";}
@@ -45,24 +47,18 @@ public details(b:any){
   if (a==5){this.link="assets/assets/img/user20.jpg";}
   if (a==6){this.link="assets/assets/img/user3.jpg";}
 if(!this._butler.details){
-  this._butler.details=true;
-  return
-}else{
-  this._butler.details=false;
+    this._butler.details=true;
+    return
+  }else{
+    this._butler.details=false;
+  }
 }
-
+get isUserLocationReady(){
+  return this.bikersService.isUserLocationReady;
 }
-
   ngAfterViewInit(): void {
 
-    const map = new Map({
-      container: this.mapDivElement.nativeElement  , // container ID
-      style: 'mapbox://styles/mapbox/streets-v11', // style URL
-      center: this.bikerService.userLocation,
-      zoom: 16 // starting zoom
-      });
-
-    console.log(this.bikerService.userLocation);
+    console.log(this.bikersService.userLocation);
      this.script.load(
     'jquery',
     'popper',
@@ -74,6 +70,15 @@ if(!this._butler.details){
     'progressbar',
     'swiper',
     'app')
-    .then(data => {console.log('script loaded ', data);}).catch(error => console.log(error));
-   }
+    .then(data => {
+      console.log('script loaded ', data);
+    }).catch(error => console.log(error));
+   
+    const map = new Map({
+      container: this.mapDivElement.nativeElement, // container ID
+      style: 'mapbox://styles/mapbox/streets-v11', // style URL
+      center:this.bikersService.userLocation,
+      zoom: 15 // starting zoom
+      });
+  }
 }

@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { BikersService } from './services';
 import { Butler } from './services/butler.service';
 import { ScriptService } from './services/script.service';
 //declare var $: any;
@@ -11,9 +12,11 @@ export class AppComponent implements OnInit {
   title = 'motogo';
   constructor(
     public script:ScriptService,
+    public bikersScript:BikersService,
     public _butler:Butler
   ){}
   ngOnInit(): void {
+    this.bikersScript.getUserLocation();
     this.script.load(
       'jquery',
       'popper',
