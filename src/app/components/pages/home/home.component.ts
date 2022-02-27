@@ -4,7 +4,7 @@ import { ScriptStore } from '@app/services/script.store';
 import { SwiperOptions } from 'swiper';
 import {Butler} from '@app/services/butler.service';
 import { BikersService } from '@app/services/';
-import {Map} from 'mapbox-gl';
+import {Map, Popup,Marker} from 'mapbox-gl';
 
 
 declare var $: any;
@@ -37,6 +37,7 @@ link:string="";
     navigation: false
   };  
   
+
 
 public details(b:any){
   let a =b;
@@ -82,5 +83,13 @@ get isUserLocationReady(){
       bearing: 40, // bearing in degrees
       zoom: 15 // starting zoom
       });
+      const popup = new Popup()
+      .setHTML(`
+      <h6>Aqui estoy</h6>
+      </span>esta es mi ubicación</span>
+        `); 
+        new Marker({color:'red'}).setLngLat(this.bikersService.userLocation)
+        .setPopup(popup)
+        .addTo(map)
   }
 }
