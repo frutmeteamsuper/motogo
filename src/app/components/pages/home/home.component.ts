@@ -78,6 +78,8 @@ get isUserLocationReady(){
       container: this.mapDivElement.nativeElement, // container ID
       style: 'mapbox://styles/mapbox/streets-v11', // style URL
       center:this.bikersService.userLocation,
+      pitch: 60, // pitch in degrees
+      bearing: -60, // bearing in degrees
       zoom: 15 // starting zoom
       });
   }
