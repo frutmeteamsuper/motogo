@@ -88,7 +88,7 @@ get isUserLocationReady(){
       <h6>Aqui estoy</h6>
       </span>esta es mi ubicación</span>
         `); 
-        new Marker({color:'red'}).setLngLat(this.bikersService.userLocation)
+        new Marker({color:'red'}).setLngLat(this.bikersService.userLocation!)
         .setPopup(popup)
         .addTo(map)
   }
