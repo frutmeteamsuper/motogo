@@ -10,12 +10,13 @@ import { stringify } from 'querystring';
 })
 export class MapService {
   private map?:Map;
-  public butler?:Butler;
-  private markers:Marker[]=[]
-  private drawPolyline(route  :Route){
-    this.butler!.distance=route.distance/1000;
-    this.butler!.duration=route.duration/60;
-    this.butler!.placeholder="Km:"+this.butler?.distance.toString();
+ 
+  private markers:Marker[]=[];
+  private drawPolyline(route:Route){
+    if(!route.distance)throw Error ('no hay que dbjar');
+    this.butler.distance=(route.distance/1000).toFixed(2);
+    this.butler.duration=route.duration/60;
+    this.butler.placeholder="Km:"+this.butler?.distance.toString();
     console.log({
       kms: route.distance/1000, duration:route.duration/60
     });
@@ -56,7 +57,8 @@ export class MapService {
       }  
     })
   }
-constructor(private directionsApi:DirectionsApiClient){
+constructor(private directionsApi:DirectionsApiClient,
+  public butler:Butler){
 
 }
   get isMapReady(){

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class Butler {
     vector:any={};       
     string:string=""; 
-    distance:number=0;
+    distance:string="";
     duration:number=0;
     biker:boolean=false;
     details:boolean=false;
