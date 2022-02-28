@@ -426,7 +426,7 @@
 
 
                                     <ul *ngIf="places.length>0">
-                                        <li *ngFor="let place of places" (click)="flyTo(place)" class="list-group-item list-group-item-action pointer att-close" style="border: 0px;" >
+                                        <li *ngFor="let place of places" (click)="flyTo(place)" class="list-group-item list-group-item-action pointer att-close" style="border: 0px;" data-bs-dismiss="modal">
                                             <h6>{{place.text}}</h6>
                                             <p style="font-size: 12px;">{{place.place_name}}</p>
                                         </li>
@@ -435,7 +435,7 @@
                                 </div>
                             </div>
                             <div class="">
-                                <button class="btn btn-lg btn-warning w-100 shadow-sm shadow-warning att-close" >Go!</button>
+                                <button class="btn btn-lg btn-warning w-100 shadow-sm shadow-warning " >Go!</button>
                             </div>
                         </div>
                     </div>
@@ -462,13 +462,13 @@
                 
             </div>
         </div>
-        <div class="col-auto">
+        <!-- <div class="col-auto">
             <button class="btn btn-outline-warning btn-44 avatar p-0" type="button" data-bs-toggle="modal" data-bs-target="#menumodal">
                 <i class="bi bi-filter"></i>
             </button>
             
            
-        </div>
+        </div> -->
     </div>
   </div>  
  
