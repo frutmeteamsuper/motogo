@@ -5,6 +5,8 @@ import { SwiperOptions } from 'swiper';
 import {Butler} from '@app/services/butler.service';
 import { BikersService } from '@app/services/';
 import {Map, Popup,Marker} from 'mapbox-gl';
+import { MapService } from '@app/services/map.service';
+import { Feature } from '@app/interfaces/places';
 
 
 declare var $: any;
@@ -15,12 +17,14 @@ declare var $: any;
 })
 export class HomeComponent implements AfterViewInit {
 
+  private debounceTimer?:NodeJS.Timeout;
 @ViewChild('mapDiv')mapDivElement!:ElementRef
 
-link:string="";
+link:string=""; 
   constructor(
     private bikersService:BikersService,
     public script:ScriptService,
+    private mapService:MapService,
     public _butler: Butler
   ) { } 
 
@@ -54,9 +58,28 @@ if(!this._butler.details){
     this._butler.details=false;
   }
 }
-get isUserLocationReady(){
+get isLoadingPlaces(){
+  return this.bikersService.isLoadingPlaces;
+}
+get isUserLocationReady():boolean{
   return this.bikersService.isUserLocationReady;
 }
+get places() :Feature []{
+  return this.bikersService.places; 
+}
+flyTo(place:Feature ){
+  const   [lng,lat]=place.center; 
+  this.mapService.flyTo([lng,lat ]);
+
+}
+onQueryChanged(query:string=''){
+  if (this.debounceTimer)clearTimeout (this.debounceTimer);
+  this.debounceTimer=setTimeout (()=> {
+   this.bikersService.getPlacesByQuery(query);
+    // console.log(query);
+  }, 350);
+}
+
   ngAfterViewInit(): void {
 
     console.log(this.bikersService.userLocation);
@@ -83,13 +106,15 @@ get isUserLocationReady(){
       bearing: 40, // bearing in degrees
       zoom: 15 // starting zoom
       });
-      const popup = new Popup()
+    const popup = new Popup()
       .setHTML(`
       <h6>Aqui estoy</h6>
       </span>esta es mi ubicación</span>
         `); 
-        new Marker({color:'red'}).setLngLat(this.bikersService.userLocation!)
-        .setPopup(popup)
-        .addTo(map)
+    new Marker({color:'red'}).setLngLat(this.bikersService.userLocation!)
+      .setPopup(popup)
+      .addTo(map)
+    this.mapService.setMap(map)
+
   }
 }

@@ -17,7 +17,7 @@ import { HomeSelectorModule } from './shared/components/home-selector/home-selec
 import { FooterModule } from './shared/components/footer/footer.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MapviewComponent } from './components/mapview/mapview.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({ 
   declarations: [
     AppComponent,
@@ -35,6 +35,7 @@ import { MapviewComponent } from './components/mapview/mapview.component';
     NotificationsModule,
     FooterModule, 
     FontAwesomeModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

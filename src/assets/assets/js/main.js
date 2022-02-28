@@ -45,9 +45,15 @@ $(document).ready(function () {
 
         return false;
     });
+      
     $('.filter-close').on('click', function () {
         if (body.hasClass('filter-open') === true) {
             body.removeClass('filter-open');
+        }
+    });
+    $('.att-close').on('click', function () {
+        if (body.hasClass('modal-open') === true) {
+            body.removeClass('modal-open');
         }
     });
 
