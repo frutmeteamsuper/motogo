@@ -3,13 +3,19 @@ import {AnySourceData, LngLatLike, Map,Marker, Popup} from'mapbox-gl';
 import { Feature } from '@app/interfaces/places';
 import { DirectionsApiClient } from '@app/components/pages/home/api/directionsApiClient';
 import {DirectionsResponse,Route }from'@app/interfaces/directions'
+import { Butler } from './butler.service';
+import { stringify } from 'querystring';
 @Injectable({
   providedIn: 'root'
 })
 export class MapService {
   private map?:Map;
+  public butler?:Butler;
   private markers:Marker[]=[]
   private drawPolyline(route  :Route){
+    this.butler!.distance=route.distance/1000;
+    this.butler!.duration=route.duration/60;
+    this.butler!.placeholder="Km:"+this.butler?.distance.toString();
     console.log({
       kms: route.distance/1000, duration:route.duration/60
     });
