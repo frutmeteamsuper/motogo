@@ -19,6 +19,7 @@ export class HomeComponent implements AfterViewInit {
 
   private debounceTimer?:NodeJS.Timeout;
 @ViewChild('mapDiv')mapDivElement!:ElementRef
+@ViewChild('mysearch')myserachElement!:ElementRef
 
 link:string=""; 
   constructor(
@@ -69,6 +70,7 @@ get places() :Feature []{
 }
 flyTo(place:Feature ){
   const   [lng,lat]=place.center; 
+  // this.document.getElementById("sear").blur();
   this.mapService.flyTo([lng,lat ]);
 
 }
@@ -79,7 +81,9 @@ onQueryChanged(query:string=''){
     // console.log(query);
   }, 350);
 }
-
+focusRemove(){
+  this.myserachElement.nativeElement.blur();
+}
   ngAfterViewInit(): void {
 
     console.log(this.bikersService.userLocation);
