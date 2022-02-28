@@ -73,6 +73,7 @@ flyTo(place:Feature ){
   // this.document.getElementById("sear").blur();
   this.mapService.flyTo([lng,lat ]);
   this.focusRemove();
+  this.getDirections(place);
 }
 onQueryChanged(query:string=''){
   if (this.debounceTimer)clearTimeout (this.debounceTimer);
@@ -83,6 +84,13 @@ onQueryChanged(query:string=''){
 }
 focusRemove(){
   this.myserachElement.nativeElement.blur();
+}
+getDirections(place:Feature){
+  if (!this.bikersService.userLocation) throw Error('ubicacion no disponible');  
+  const start =this.bikersService.userLocation!;
+  const end =place.center as [number,number]  ;
+  this.mapService.getRouteBetweenPoints(start,end);
+
 }
   ngAfterViewInit(): void {
 
