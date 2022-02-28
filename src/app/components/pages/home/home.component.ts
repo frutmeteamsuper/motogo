@@ -72,7 +72,7 @@ flyTo(place:Feature ){
   const   [lng,lat]=place.center; 
   // this.document.getElementById("sear").blur();
   this.mapService.flyTo([lng,lat ]);
-
+  this.focusRemove();
 }
 onQueryChanged(query:string=''){
   if (this.debounceTimer)clearTimeout (this.debounceTimer);
