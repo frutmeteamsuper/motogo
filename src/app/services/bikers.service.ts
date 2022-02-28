@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Feature, PlacesResponse } from '@app/interfaces/places';
 import { PlacesApiClient } from '@app/components/pages/home/api/placesApiClient';
+import { MapService } from '.';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,9 @@ export class BikersService {
     return !!this.userLocation;
   }
   
-  constructor(private placesApi:PlacesApiClient) {
+  constructor(
+    private mapService:MapService,
+    private placesApi:PlacesApiClient) {
     this.getUserLocation();
    }
   public async  getUserLocation():Promise<[number,number]>{
@@ -33,7 +36,7 @@ export class BikersService {
     });
   }
 
-  getPlacesByQuery(query: string=''){
+  getPlacesByQuery(query: string=''){ 
     if( query.length===0){
       this.isLoadingPlaces=false;
       this.places=[];
@@ -50,6 +53,7 @@ export class BikersService {
       console.log(resp.features)
       this.isLoadingPlaces=false;
       this.places=resp.features;
+      this.mapService.createMarkersFromPlaces(this.places);
     });
   }
 
