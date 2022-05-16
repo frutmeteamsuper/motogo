@@ -13,10 +13,11 @@ export class MapService {
  
   private markers:Marker[]=[];
   private drawPolyline(route:Route){
-    if(!route.distance)throw Error ('no hay que dbjar');
+    if(!route.distance)throw Error('no hay que dbjar');
+    this.butler.distance2=route.distance/1000;
     this.butler.distance=(route.distance/1000).toFixed(2);
     this.butler.duration=route.duration/60;
-    this.butler.placeholder="Km:"+this.butler?.distance.toString();
+    this.butler.placeholder=""+this.butler?.distance.toString()+" Km";
     console.log({
       kms: route.distance/1000, duration:route.duration/60
     });

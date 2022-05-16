@@ -7,6 +7,7 @@ export class Butler {
     vector:any={};       
     string:string=""; 
     distance:string="";
+    distance2:number=0;
     duration:number=0;
     biker:boolean=false;
     details:boolean=false;

@@ -1,26 +1,22 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
     "allowJs": true,
-    "paths":{
+    "paths": {
       "@app/*": [
         "src/app/*"
       ],
       "@shared/*": [
         "src/app/shared/*"
       ],
-      "@pages/*":[ 
+      "@pages/*": [
         "src/app/components/pages/*"
-        ],
-       /*  "@assets/*":[ 
-          "src/assets/assets/*"
-          ], */
-      "@enviroment/*":[ 
-          "src/enviroments/*"
-          ],
-      },
+      ],
+      "@enviroment/*": [
+        "src/enviroments/*"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -34,13 +30,16 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "allowSyntheticDefaultImports":true,
+    "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "module": "es2020",
-    "types":["node"],
+    "types": [
+      "node"
+    ],
     "lib": [
       "es2020",
-      "dom"
+      "dom",
+      "esnext.asynciterable"
     ]
   },
   "angularCompilerOptions": {

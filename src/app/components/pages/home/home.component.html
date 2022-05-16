@@ -387,13 +387,13 @@
                             <div class="">
                                 <div class="row mb-4">
                                     <div class="col align-self-center">
-                                        <h6 class="mb-0">Indícanos tu ruta</h6>
+                                        <!-- <h6 class="mb-0">Indícanos tu ruta</h6> -->
                                         <!-- <p class="text-secondary small">254 Bikers en Mérida</p> -->
                                     </div>
                                    
                                 </div>
                             </div>
-                            <div class="row justify-content-center align-items-center mb-3 gx-3">
+                            <!-- <div class="row justify-content-center align-items-center mb-3 gx-3">
                                 <div class="row">
                                     <div class="col position-relative align-self-center">
                                         <div class="form-group form-floating mb-3 is-valid">
@@ -403,7 +403,7 @@
                                     </div>
                              
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row justify-content-center align-items-center gx-3">
                                 <div class="row">
                                     <div class="col position-relative align-self-center">
@@ -412,10 +412,11 @@
                                             type="text" 
                                             class="form-control" 
                                             value=""
+                                            placeholder="Aqui"
                                             #txtQuery
                                             (keyup)="onQueryChanged(txtQuery.value)"
                                             >  
-                                            <label class="form-control-label" for="email">Destino</label>
+                                            <label class="form-control-label" >ingresa un lugar a buscar</label>
                                         </div>
                                     </div>
                                     <div *ngIf="isLoadingPlaces">
@@ -456,11 +457,46 @@
             </button>
         </div> -->
         <div class="col">
-            <div class="input-group">
-                 <input (click)="focusRemove()" disabled="disabled"  #mysearch type="text" class="form-control " placeholder="{{_butler.placeholder}}" data-bs-toggle="modal" data-bs-target="#attachefiles" id="mysearch" style="background-color: aliceblue;"> 
+            <div class="input-group"  [hidden]="_butler.duration!=0" >
+                 <input (click)="focusRemove()" disabled="disabled"  #mysearch type="text" class="form-control "placeholder="{{_butler.placeholder}}" data-bs-toggle="modal" data-bs-target="#attachefiles" id="mysearch" style="background-color: white;"> 
              <!--   <button class="btn btn-44 btn-outline-warning filter-btn" type="button"><i class="bi bi-filter size-22"></i></button> -->
                 
             </div>
+            <!-- <div  [hidden]="_butler.duration===0" >
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwg-38ChgpoVL1TIWmApmwJU6yrUA2ZrdoYA&usqp=CAU" alt="">                                                                                                                                                                                                                                                                                                                      
+            </div> -->
+            <!-- <div class="center"  [hidden]="_butler.duration===0" >
+
+                {{_butler.placeholder}}
+            </div> -->
+            <div class="card-body" [hidden]="_butler.duration===0">
+                
+                <div class="">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="mb-0">{{_butler.placeholder}}</h6>
+                            <p class="text-muted small">Distancia</p>
+                        </div>
+                        <div class="col-auto text-end">
+                            <h6 class="mb-0">{{_butler.duration  | number: '1.0-0'}} min</h6>
+                            <p class="text-muted small">Duración</p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row fw-medium">
+                        <div class="col-12">
+                            <div class="dashed-line mb-3"></div>
+                        </div>
+                        <div class="col">
+                            <p>Monto a pagar</p>
+                        </div>
+                        <div class="col-auto text-end">
+                            <p class="text-muted" [hidden]="_butler.distance2>=10">{{_butler.distance2*0.8 | number : '1.2-2'}} $</p>
+                        </div>
+                    </div>
+            </div>
+            
         </div>
         <div class="col-auto">
             <button class="btn btn-outline-warning btn-44 avatar p-0" type="button" data-bs-toggle="modal" data-bs-target="#menumodal">
@@ -469,6 +505,9 @@
             
            
         </div>
+    </div>
+    <div class="col-12" [hidden]="_butler.duration===0">
+        <a class="btn btn-default shadow-sm btn-lg w-100">Go</a>
     </div>
   </div>  
  

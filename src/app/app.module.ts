@@ -18,6 +18,7 @@ import { FooterModule } from './shared/components/footer/footer.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MapviewComponent } from './components/mapview/mapview.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GraphQLModule } from './graphql.module';
 @NgModule({ 
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    GraphQLModule
   ],
   providers: [
     Butler
