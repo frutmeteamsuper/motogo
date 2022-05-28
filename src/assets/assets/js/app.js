@@ -158,8 +158,8 @@ $(window).on('load', function () {
                 text: {
                     autoStyleContainer: false
                 },
-                from: { color: '#ffbd17', width: 6 },
-                to: { color: '#ffbd17', width: 6 },
+                from: { color: '#fded09', width: 6 },
+                to: { color: '#fded09', width: 6 },
                 // Set default step function for all animate calls
                 step: function (state, circle) {
                     circle.path.setAttribute('stroke', state.color);
