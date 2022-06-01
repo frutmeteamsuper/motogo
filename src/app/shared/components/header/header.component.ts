@@ -31,7 +31,7 @@ export class HeaderComponent implements AfterViewInit {
       'swiper',
       'app')
       .then(data => {console.log('script loaded ', data);}).catch(error => console.log(error));
-      }
+     
 
    }
 
@@ -64,6 +64,6 @@ export class HeaderComponent implements AfterViewInit {
   }
   ngAfterViewInit(): void {
    
-  
+  }
 
 }
