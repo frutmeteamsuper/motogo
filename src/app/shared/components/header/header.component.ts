@@ -48,7 +48,7 @@ export class HeaderComponent implements AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.script.load(
-      'jquery',
+      // 'jquery',
       'popper',
       'bootstrap-5',
       'main',
