@@ -17,7 +17,7 @@
                         </figure>
                     </div>
                     <div class="col px-0 align-self-center">
-                        <h5 class="mb-2">Matias Delgado</h5>
+                        <h5 class="mb-2"  [ngStyle]="{'color': _butler.biker ? '#000000cc' : '#fff'}">Matias Delgado</h5>
                         <app-home-selector></app-home-selector>
                         <!-- <p class="text-muted size-12">Mérida,<br />Venezuela</p> -->
                     </div>
@@ -33,14 +33,14 @@
                     <li class="nav-item menu-btn" [hidden]="_butler.biker">
                         <a  [routerLink]="['home']" class="nav-link active " aria-current="page"  >
                             <div class="avatar avatar-40 icon"><i class="bi bi-house-door"></i></div>
-                            <div class="col">Passenger Home</div>
+                            <div class="col" >Passenger Home</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li> 
                     <li class="nav-item menu-btn" [hidden]="!_butler.biker">
                         <a  [routerLink]="['home']" class="nav-link active " aria-current="page"  >
                             <div class="avatar avatar-40 icon"><i class="bi bi-house-door"></i></div>
-                            <div class="col">Biker Home</div>
+                            <div class="col"  [ngStyle]="{'color': _butler.biker ? '#000000cc' : '#fff'}">Biker Home</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li>
@@ -50,7 +50,7 @@
                     <li class="nav-item menu-btn">
                         <a class="nav-link" [routerLink]="['notifications']" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="bi bi-bell"></i></div>
-                            <div class="col">Notifications</div>
+                            <div class="col"  [ngStyle]="{'color': _butler.biker ? '#000000cc' : '#fff'}">Notifications</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li>
@@ -60,7 +60,7 @@
                            <li class="nav-item menu-btn">
                         <a  [routerLink]="['login']" class="nav-link  " aria-current="page"  >
                             <div class="avatar avatar-40 icon"><i class="bi bi-box-arrow-right"></i></div>
-                            <div class="col">Logout</div>
+                            <div class="col"  [ngStyle]="{'color': _butler.biker ? '#000000cc' : '#fff'}">Logout</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li>
