@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   ){}
   ngOnInit(): void {
     
-    this.bikersScript.getUserLocation();
+    // this.bikersScript.getUserLocation();
     
   }
 }

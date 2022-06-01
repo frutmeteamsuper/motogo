@@ -96,7 +96,7 @@ getDirections(place:Feature){
 
     console.log(this.bikersService.userLocation);
      this.script.load(
-    'jquery',
+    // 'jquery',
     'popper',
     'bootstrap-5',
     'main',
