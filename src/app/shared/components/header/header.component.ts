@@ -47,7 +47,6 @@ export class HeaderComponent implements AfterViewInit {
   
   }
   ngAfterViewInit(): void {
-    this.bikersScript.getUserLocation();
     this.script.load(
       'jquery',
       'popper',
