@@ -17,7 +17,23 @@ export class HeaderComponent implements AfterViewInit {
     public _butler:Butler,
     public script:ScriptService,
     public router:Router
-  ) { }
+  ) {
+    console.log('Loading External Scripts');
+    this.script.load(
+      // 'jquery',
+      'popper',
+      'bootstrap-5',
+      'main',
+      'color-scheme',
+      'pwa-services',
+      'chart-js',
+      'progressbar',
+      'swiper',
+      'app')
+      .then(data => {console.log('script loaded ', data);}).catch(error => console.log(error));
+     
+
+   }
 
   config: SwiperOptions = {
     a11y: { enabled: true },
@@ -47,7 +63,7 @@ export class HeaderComponent implements AfterViewInit {
   
   }
   ngAfterViewInit(): void {
-      }
-  
+   
+  }
 
 }
